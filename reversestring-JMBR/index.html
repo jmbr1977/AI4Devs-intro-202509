@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reverse String</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <meta name="description" content="Type a word or sentence and get it reversed." />
+</head>
+<body>
+  <main class="container">
+    <h1>Reverse String</h1>
+
+    <!-- Accessible form: label + input + clear & copy actions -->
+    <form id="reverse-form" aria-describedby="helper">
+      <label for="inputText">Enter text to reverse</label>
+      <textarea
+        id="inputText"
+        name="inputText"
+        rows="4"
+        placeholder="Type something like: Hello World"
+        autocomplete="off"
+      ></textarea>
+
+      <div class="actions">
+        <button type="submit" id="reverseBtn" aria-label="Reverse text">Reverse</button>
+        <button type="button" id="clearBtn" aria-label="Clear input">Clear</button>
+        <button type="button" id="copyBtn" aria-label="Copy result">Copy result</button>
+      </div>
+
+      <p id="helper" class="helper">
+        Tip: It handles emojis and accented characters correctly (grapheme-aware).
+      </p>
+    </form>
+
+    <section aria-live="polite" aria-atomic="true" class="output">
+      <h2>Result</h2>
+      <pre id="result" class="result" tabindex="0" aria-label="Reversed text will appear here"></pre>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <noscript>
+    This page requires JavaScript to reverse the text.
+  </noscript>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
